@@ -1,0 +1,171 @@
+body {
+    margin: 0px;
+    background-color: #333;
+    color: rgb(233, 237, 204);
+
+    
+}
+
+$bleu-tres-fonce: rgb(42, 59, 75);
+$bleu-fonce: rgb(61, 80, 106);
+$bleu-moyen: rgb(95, 129, 160);
+$bleu-pale: rgb(186, 221, 255);
+// $couleur-pale: rgba(49, 49, 49, 0.8);
+// --font-color: rgba(49, 49, 49, 0.8);
+
+.conteneur {
+    box-sizing: border-box;
+    border-bottom:3px solid rgba(49, 49, 49, 0.8) ;
+    border-right:3px solid rgba(49, 49, 49, 0.8) ;
+    border-top:2px solid rgba(226, 238, 255, 0.9) ;
+    border-left:3px solid rgba(199, 215, 237, 0.6) ;
+    box-shadow: 5px 5px 10px rgba(29, 29, 29, 0.5);
+    border-radius: 15px;
+    background-color: $bleu-moyen;
+    width: 60%;
+    height: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .section-haut,
+    .section-bas {
+        background-color: $bleu-fonce;
+        margin: 0px auto;
+        width: 80%;
+        border-top:2px solid rgba(49, 49, 49, 0.8) ;
+        border-left:2px solid rgba(49, 49, 49, 0.8) ;
+        border-right:1px solid rgba(199, 215, 237, 0.9) ;
+        border-bottom:2px solid rgba(199, 215, 237, 0.6) ;
+        box-shadow: 5px 5px 20px 5px rgba(49, 49, 49, 0.6) inset;
+        padding: 0px;
+        
+
+    }
+
+    
+    .section-haut {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        height: 400px;
+        margin-top: 50px;
+        
+
+        .liste-chansons {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: auto;
+            margin: 0px auto;
+            width: 90%;
+            height: 100%;
+        
+                div {
+                    padding: 10px;
+                    background-color: rgb(61, 80, 106);
+                    border-bottom: 1px solid $bleu-pale;
+                }
+
+                div:hover {
+                    background-color: $bleu-tres-fonce;
+                }
+
+        }
+       
+    }
+
+    .section-bas {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        height: 300px;
+
+        .titre-chanson-active {
+            display: flex;
+            justify-content: center;
+            height: 130px;
+    
+            .image-chanson img { 
+                border: 1px solid honeydew;
+                border-radius: 10px;
+                height: 100px;
+                margin: 15px;
+                width: 100px;
+                object-fit: contain;
+                object-position: center center;
+    
+    
+            }
+    
+            .titre-chanson {
+                margin: 15px;
+                width: 30%;
+                height: 100px;
+            }
+        }
+    
+        .barre-temps {
+            height: 50px;
+        }
+    
+        .controles {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+            
+    
+            .bouton-play {
+            
+                color: $bleu-tres-fonce;
+                font-size: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top:1px solid rgba(28, 27, 27, 0.7) ;
+                border-left:1px solid rgba(49, 49, 49, 0.8) ;
+                border-right:1px solid rgba(199, 215, 237, 0.6) ;
+                border-bottom:1px solid rgba(199, 215, 237, 0.5) ;
+                box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
+                background-color: burlywood;
+                height: 60px;
+                margin-top: 15px;
+                padding-left: 5px;
+                width: 80px;
+                border-radius: 25px;
+            }
+    
+            .bouton-pause {
+            
+                color: $bleu-tres-fonce;
+                font-size: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top:1px solid rgba(28, 27, 27, 0.7) ;
+                border-left:1px solid rgba(49, 49, 49, 0.8) ;
+                border-right:1px solid rgba(199, 215, 237, 0.6) ;
+                border-bottom:1px solid rgba(199, 215, 237, 0.5) ;
+                box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
+                background-color: burlywood;
+                height: 60px;
+                margin-top: 15px;
+                padding-left: 5px;
+                width: 80px;
+                border-radius: 25px;
+            }
+        }
+
+    }
+
+
+
+}
+
