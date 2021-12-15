@@ -1,0 +1,45 @@
+<div class="btn-retour">
+    <a href="#" @click.prevent="$root.changerPage('accueil')">Retour à l'accueil</a>
+
+</div>
+
+<main class="conteneur">
+
+    <input type="text" v-model="texte_input" placeholder="Rechercher">
+    <!-- <p>Le texte est :{{ texte_input }}</p> -->
+
+    <div class="section-haut">
+
+        <div class="liste-chansons" v-for="chanson in chansons" @click="jouerChanson">
+
+            <div>{{chanson.titre}}</div>
+            <div>{{chanson.artiste}}</div>
+            <div>{{chanson.temps}}</div>
+ 
+        </div>
+    </div>
+
+    <div class="section-bas">
+
+        <div class="titre-chanson-active">
+            <div class="image-chanson">
+                <img src="images/organic-lo-fi-11326.webp" alt="">
+            </div>
+            <div class="titre-chanson">
+                <h3>Titre</h3>
+            </div>
+        </div>
+
+        <div class="barre-temps"></div>
+
+        <div class="controles">
+            <div class="recherche"></div>
+            <div class="bouton-play">▷</div>
+            <div class="volume"></div>
+        </div>
+
+
+    </div>
+
+
+</main>

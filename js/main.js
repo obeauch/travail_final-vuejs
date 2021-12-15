@@ -1,35 +1,30 @@
-// import externalTemplate from '../externalTemplate.js'
 
-// export default externalTemplate({
-
-//     template_url: "js/components/accueil.html",
+import accueil from './components/accueil.js'
+import player from './components/player.js'
 
 const app = {
     components: {
-
+        "accueil": accueil,
+        "player": player,
     },
 
     data() {
         return {
-            chansons: [],
+            page: "accueil",
+            player: null,
 
         }
     },
 
-
     mounted() {
 
-        // faire un copier coller fetch pour tout projet
-        fetch("chansons.json").then(resp => {
-            resp.json().then(contenu_json => {
-                this.chansons = contenu_json
-            })
-        })
-
-
     },
-    methods: {
 
+    methods: {
+        changerPage(nouvelle_page, player_page) {
+            this.page = nouvelle_page
+            this.player = player_page
+        }
 
     },
 }
