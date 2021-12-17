@@ -1,20 +1,21 @@
-<div class="btn-retour">
-    <a href="#" @click.prevent="$root.changerPage('accueil')">Retour à l'accueil</a>
-
+<div class="btn-retour contour"  @click.prevent="$root.changerPage('accueil')">
+    Retour à l'accueil
 </div>
 
-<main class="conteneur">
+<main class="conteneur contour">
 
-    <input type="text" v-model="texte_input" placeholder="Rechercher">
+    <input class="recherche" type="text" v-model="texte_input" placeholder="Rechercher">
     <!-- <p>Le texte est :{{ texte_input }}</p> -->
 
     <div class="section-haut">
 
-        <div class="liste-chansons" v-for="chanson in chansons" @click="jouerChanson">
+        <div class="liste-chansons" v-for="chanson in chansons" @click="jouerChanson(chanson)">
 
             <div>{{chanson.titre}}</div>
             <div>{{chanson.artiste}}</div>
             <div>{{chanson.temps}}</div>
+            <!-- <audio :src="'sons/' + chanson_selection.audio"></audio> -->
+            
  
         </div>
     </div>
@@ -23,17 +24,23 @@
 
         <div class="titre-chanson-active">
             <div class="image-chanson">
-                <img src="images/organic-lo-fi-11326.webp" alt="">
+                <img class="contour" :src="'images/' + chanson_selection.image" alt="">
             </div>
             <div class="titre-chanson">
-                <h3>Titre</h3>
+                <h3>{{chanson_selection.titre}}</h3>
+                <p>{{chanson_selection.artiste}}</p>
+                
             </div>
         </div>
 
-        <div class="barre-temps"></div>
+        <div class="barre-temps">
+            <p>{{chanson_selection.audio}}</p>
+            {{temps_actuel}}
+        </div>
 
         <div class="controles">
-            <div class="recherche"></div>
+            
+            <!-- <div class="recherche"></div> -->
             <div class="bouton-play">▷</div>
             <div class="volume"></div>
         </div>

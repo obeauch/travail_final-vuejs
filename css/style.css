@@ -7,9 +7,7 @@ body {
   margin: 0px;
 }
 
-.btn-player,
-.btn-retour,
-.conteneur {
+.contour {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-bottom: 3px solid rgba(49, 49, 49, 0.8);
@@ -25,17 +23,17 @@ body {
 .btn-retour {
   height: 50px;
   margin: 30px;
-  padding: 10px;
-  width: 150px;
-}
-
-.btn-retour a {
-  font-size: 14px;
+  margin: 10px;
+  margin-left: 10%;
+  padding: 10px 0px;
+  width: 180px;
+  text-align: center;
+  font-size: 16px;
   color: #e9edcc;
   text-decoration: none;
 }
 
-a:hover {
+.btn-retour:hover {
   color: burlywood;
 }
 
@@ -79,7 +77,7 @@ a:hover {
   padding: 0px;
 }
 
-.conteneur input {
+.conteneur .recherche {
   width: 30%;
   height: 30px;
   border-top: 1px solid rgba(28, 27, 27, 0.7);
@@ -92,6 +90,7 @@ a:hover {
   border-radius: 10px;
   margin: 20px auto;
   font-size: 16px;
+  text-align: center;
 }
 
 .conteneur .section-haut {
@@ -124,6 +123,7 @@ a:hover {
 
 .conteneur .section-haut .liste-chansons:hover {
   background-color: #2a3b4b;
+  cursor: pointer;
 }
 
 .conteneur .section-bas {
@@ -140,17 +140,23 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   height: 130px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0px 20%;
+}
+
+.conteneur .section-bas .titre-chanson-active h3,
+.conteneur .section-bas .titre-chanson-active p {
+  margin-top: 0px;
 }
 
 .conteneur .section-bas .titre-chanson-active .image-chanson img {
-  border: 1px solid honeydew;
-  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   height: 100px;
-  margin: 15px;
+  margin: 15px 0px;
   width: 100px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -160,7 +166,7 @@ a:hover {
 
 .conteneur .section-bas .titre-chanson-active .titre-chanson {
   margin: 15px;
-  width: 30%;
+  width: 40%;
   height: 100px;
 }
 
@@ -181,29 +187,32 @@ a:hover {
 }
 
 .conteneur .section-bas .controles .bouton-play {
-  color: #2a3b4b;
-  font-size: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  background-color: burlywood;
+  border-radius: 25px;
   border-top: 1px solid rgba(28, 27, 27, 0.7);
   border-left: 1px solid rgba(49, 49, 49, 0.8);
   border-right: 1px solid rgba(199, 215, 237, 0.6);
   border-bottom: 1px solid rgba(199, 215, 237, 0.5);
   -webkit-box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
           box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
-  background-color: burlywood;
+  color: #2a3b4b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 50px;
   height: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 50%;
   margin-top: 15px;
   padding-left: 5px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 80px;
-  border-radius: 25px;
 }
 
 .conteneur .section-bas .controles .bouton-pause {

@@ -14,18 +14,13 @@ body {
     margin: 0px;
 }
 
-
-
-
 $bleu-tres-fonce: rgb(42, 59, 75);
 $bleu-fonce: rgb(61, 80, 106);
 $bleu-moyen: rgb(95, 129, 160);
 $bleu-pale: rgb(186, 221, 255);
 
 
-.btn-player,
-.btn-retour,
-.conteneur {
+.contour{
 
     box-sizing: border-box;
     border-bottom:3px solid rgba(49, 49, 49, 0.8) ;
@@ -42,17 +37,17 @@ $bleu-pale: rgb(186, 221, 255);
     
     height: 50px;
     margin: 30px;
-    padding: 10px;
-    width: 150px;
+    margin: 10px;
+    margin-left: 10%;
+    padding: 10px 0px;
+    width: 180px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(233, 237, 204);
+    text-decoration: none;
 
-    a {
-        font-size: 14px;
-        color: rgb(233, 237, 204);
-        text-decoration: none;
-    }
 }
-
-a:hover {
+.btn-retour:hover {
     color: burlywood;
 }
 
@@ -91,7 +86,7 @@ a:hover {
 
     }
 
-    input {
+    .recherche {
         width: 30%;
         height: 30px;
         border-top:1px solid rgba(28, 27, 27, 0.7) ;
@@ -103,6 +98,7 @@ a:hover {
         border-radius: 10px;
         margin: 20px auto;
         font-size: 16px;
+        text-align: center;
 
     }
 
@@ -135,6 +131,7 @@ a:hover {
         }
         .liste-chansons:hover {
             background-color: $bleu-tres-fonce;
+            cursor: pointer;
         }
        
     }
@@ -150,25 +147,33 @@ a:hover {
 
         .titre-chanson-active {
             display: flex;
-            justify-content: center;
             height: 130px;
+            justify-content: space-between;
+            margin: 0px 20%;
+
+            h3,
+            p {
+                margin-top: 0px;
+            }
     
             .image-chanson img { 
-                border: 1px solid honeydew;
-                border-radius: 10px;
+                // border: 1px solid honeydew;
+                // border-radius: 10px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
                 height: 100px;
-                margin: 15px;
+                margin: 15px 0px;
                 width: 100px;
                 object-fit: contain;
                 object-position: center center;
-    
     
             }
     
             .titre-chanson {
                 margin: 15px;
-                width: 30%;
+                width: 40%;
                 height: 100px;
+
+            
             }
         }
     
@@ -186,22 +191,24 @@ a:hover {
     
             .bouton-play {
             
-                color: $bleu-tres-fonce;
-                font-size: 50px;
-                display: flex;
                 align-items: center;
-                justify-content: center;
+                background-color: burlywood;
+                border-radius: 25px;
                 border-top:1px solid rgba(28, 27, 27, 0.7) ;
                 border-left:1px solid rgba(49, 49, 49, 0.8) ;
                 border-right:1px solid rgba(199, 215, 237, 0.6) ;
                 border-bottom:1px solid rgba(199, 215, 237, 0.5) ;
                 box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
-                background-color: burlywood;
+                color: $bleu-tres-fonce;
+                display: flex;
+                font-size: 50px;
                 height: 60px;
+                justify-content: center;
+                margin-left: 50%;
                 margin-top: 15px;
                 padding-left: 5px;
+                transform: translateX(-50%);
                 width: 80px;
-                border-radius: 25px;
             }
     
             .bouton-pause {

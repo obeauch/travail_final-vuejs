@@ -9,6 +9,10 @@ export default externalTemplate({
             chansons: [],
             texte_input: "",
             chanson_selection: false,
+
+            audio: new Audio(),
+            musique_joue: false,
+            temps_actuel: 0,
         }
     },
 
@@ -23,11 +27,28 @@ export default externalTemplate({
         })
 
 
+        // play, pause, ended, timeupdate
+        this.audio.addEventListener("play", e => {
+            this.musique_joue = true
+        })
+
+        this.audio.addEventListener("timeupdate", e => {
+            this.temps_actuel = this.audio.currentTime
+        })
+
+        // <img :src="'images/' + jeu.images[0]" alt="">
+        this.audio.setAttribute("src", "sons/food-vlog-11204.mp3")
+        this.audio.play()
+        this.audio.volume = 0.1
+        // this.audio.pause()
+
 
     },
+
     methods: {
-        jouerChanson() {
-            this.chanson_selection = true
+        jouerChanson(chanson) {
+            this.chanson_selection = chanson
+
         }
 
     },
