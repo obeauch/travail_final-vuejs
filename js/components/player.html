@@ -9,12 +9,13 @@
 
     <div class="section-haut">
 
-        <div class="liste-chansons" v-for="chanson in chansons" @click="jouerChanson(chanson)">
+        <!-- chaque chanson du fetch chansons -->
+        <div class="liste-chansons" v-for="chanson in chansons" @click="afficherChanson(chanson)">
 
             <div>{{chanson.titre}}</div>
             <div>{{chanson.artiste}}</div>
             <div>{{chanson.temps}}</div>
-            <!-- <audio :src="'sons/' + chanson_selection.audio"></audio> -->
+            
             
  
         </div>
@@ -28,21 +29,29 @@
             </div>
             <div class="titre-chanson">
                 <h3>{{chanson_selection.titre}}</h3>
-                <p>{{chanson_selection.artiste}}</p>
-                
+                <p>{{chanson_selection.artiste}}</p> 
             </div>
         </div>
 
-        <div class="barre-temps">
-            <p>{{chanson_selection.audio}}</p>
-            {{temps_actuel}}
+        <div class="barres">
+            <div class="temps">
+                <input type="range" min="0" max="100" step="0.01" v-model="temps_actuel">
+                <p>{{temps_actuel}}</p>
+            </div>
+            <div class="volume">
+                <input type="range" min="0" max="1" step="0.02" v-model="son" @input="volume">
+                <p>{{this.show_volume}}</p>
+            </div>
         </div>
 
         <div class="controles">
-            
-            <!-- <div class="recherche"></div> -->
-            <div class="bouton-play">▷</div>
-            <div class="volume"></div>
+
+            <!-- le bouton play est visible si musique_joue est à false -->
+            <div class="bouton-play" v-if="!musique_joue" @click="play"></div>
+
+            <!-- sinon, si musique_joue est à true, le bouton pause est visible -->
+            <div class="bouton-pause" v-else @click="pause"></div>
+
         </div>
 
 

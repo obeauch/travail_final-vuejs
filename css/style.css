@@ -31,20 +31,25 @@ body {
   font-size: 16px;
   color: #e9edcc;
   text-decoration: none;
-}
-
-.btn-retour:hover {
-  color: burlywood;
+  cursor: pointer;
 }
 
 .btn-player {
   font-size: 24px;
-  margin: 80px auto;
+  margin: 200px auto;
   text-align: center;
   padding-top: 20px;
   width: 300px;
   height: 80px;
   cursor: pointer;
+}
+
+.btn-player:hover,
+.btn-retour:hover {
+  background-color: #baddff;
+  color: #ba9769;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .conteneur {
@@ -91,6 +96,40 @@ body {
   margin: 20px auto;
   font-size: 16px;
   text-align: center;
+  color: #2a3b4b;
+}
+
+.conteneur ::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2a3b4b;
+  opacity: 1;
+  /* Firefox */
+}
+
+.conteneur :-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2a3b4b;
+  opacity: 1;
+  /* Firefox */
+}
+
+.conteneur ::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2a3b4b;
+  opacity: 1;
+  /* Firefox */
+}
+
+.conteneur ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2a3b4b;
+  opacity: 1;
+  /* Firefox */
+}
+
+.conteneur ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #2a3b4b;
 }
 
 .conteneur .section-haut {
@@ -170,8 +209,36 @@ body {
   height: 100px;
 }
 
-.conteneur .section-bas .barre-temps {
+.conteneur .section-bas .barres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   height: 50px;
+  margin: 0px auto;
+}
+
+.conteneur .section-bas .barres .volume > p,
+.conteneur .section-bas .barres .temps > p {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.conteneur .section-bas .barres .temps {
+  width: 55%;
+}
+
+.conteneur .section-bas .barres .temps input {
+  width: 100%;
+}
+
+.conteneur .section-bas .barres .volume {
+  width: 35%;
+}
+
+.conteneur .section-bas .barres .volume input {
+  width: 100%;
 }
 
 .conteneur .section-bas .controles {
@@ -186,58 +253,49 @@ body {
   height: 100px;
 }
 
-.conteneur .section-bas .controles .bouton-play {
+.conteneur .section-bas .controles .bouton-play,
+.conteneur .section-bas .controles .bouton-pause {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: burlywood;
-  border-radius: 25px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
   border-top: 1px solid rgba(28, 27, 27, 0.7);
   border-left: 1px solid rgba(49, 49, 49, 0.8);
   border-right: 1px solid rgba(199, 215, 237, 0.6);
   border-bottom: 1px solid rgba(199, 215, 237, 0.5);
   -webkit-box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
           box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
-  color: #2a3b4b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 50px;
-  height: 60px;
+  height: 80px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: 50%;
-  margin-top: 15px;
+  margin-top: 0px;
   padding-left: 5px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 80px;
 }
 
+.conteneur .section-bas .controles .bouton-play {
+  background-image: url("../images/bouton-play.png");
+}
+
 .conteneur .section-bas .controles .bouton-pause {
-  color: #2a3b4b;
-  font-size: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-top: 1px solid rgba(28, 27, 27, 0.7);
-  border-left: 1px solid rgba(49, 49, 49, 0.8);
-  border-right: 1px solid rgba(199, 215, 237, 0.6);
-  border-bottom: 1px solid rgba(199, 215, 237, 0.5);
-  -webkit-box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
-          box-shadow: 4px 4px 20px 3px rgba(49, 49, 49, 0.6) inset;
-  background-color: burlywood;
-  height: 60px;
-  margin-top: 15px;
-  padding-left: 5px;
-  width: 80px;
-  border-radius: 25px;
+  background-image: url("../images/bouton-pause.png");
+}
+
+.conteneur .section-bas .controles .bouton-play:hover,
+.conteneur .section-bas .controles .bouton-pause:hover {
+  background-color: #ffc983;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 /*# sourceMappingURL=style.css.map */
