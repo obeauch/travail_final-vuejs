@@ -8,13 +8,14 @@ export default externalTemplate({
         return {
             chansons: [],
             texte_input: "",
-            chanson_selection: "",
+            chanson_selection: false,
             audio: new Audio(),
             musique_joue: false,
             temps_actuel: 0,
             secondes: 0,
             minutes: 0,
             s: 0,
+            temps_chanson: 0,
             son: 0.5,
             texte_volume: "Volume ",
             texte_temps: "Temps: ",
@@ -23,7 +24,9 @@ export default externalTemplate({
             src: "songs/",
             current_src: "",
             actif: false,
-
+            style_chanson: {
+                backgroundColor: "rgb(42, 59, 75)",
+            },
         }
     },
 
@@ -46,7 +49,7 @@ export default externalTemplate({
 
             // Tout ce qui affiche le temps de la chanson en cours
             this.audio.addEventListener("timeupdate", e => {
-                // this.temps_actuel = this.audio.currentTime
+                this.temps_actuel = this.audio.currentTime
 
                 //Pour convertir-arrondir à la seconde
                 this.secondes = Math.floor(this.audio.currentTime)
@@ -64,6 +67,12 @@ export default externalTemplate({
                     this.timeline = this.minutes + ":" + this.s
                 }
             })
+
+            this.secondes = chanson.temps
+            this.minutes = Math.floor(this.secondes / 60)
+            this.s = this.secondes % 60
+            this.temps_chanson = this.minutes + ":" + "0" + this.s
+
 
             /**
              * Lorsque une chanson est affichée, musique_joue est à false afin que le bouton play soit visible.

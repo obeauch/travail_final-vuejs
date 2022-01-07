@@ -5,15 +5,18 @@
 <main class="conteneur contour">
 
     <input class="recherche" type="text" v-model="texte_input" placeholder="Rechercher">
+    <!-- <p>Le texte est :{{ texte_input }}</p> -->
+
 
     <div class="section-haut">
 
         <!-- chaque chanson du fetch chansons -->
         <div class="liste-chansons" v-for="chanson in chansons.filter(rechercheChansons)" @click="afficherChanson(chanson)">
             <div>{{chanson.titre}}</div>
-            <div>{{chanson.artiste}}</div>   
-            <div>{{chanson.temps}}</div>   
-            <!-- <div>{{tempsChanson(chanson.temps)}}</div> -->
+            <div>{{chanson.artiste}}</div>
+            <!-- <div>{{chanson.temps}}</div>     
+            <div>{{temps_chanson}}</div> -->
+            <div>{{tempsChanson(chanson.temps)}}</div>
 
  
             <!-- <div class="{active-song: actif}" @click="hover" :style="style_chanson">{{chanson.titre}} {{chanson.artiste}} {{chanson.temps}}</div> -->
@@ -36,7 +39,7 @@
 
         <div class="barres">
             <div class="temps">
-                <input type="range" min="0" :max="chanson_selection.temps" step="0.01" v-model="temps_actuel" @input="timeline">
+                <input type="range" min="0" :max="chanson_selection.temps" step="0.01" v-model="temps_actuel">
                 <p>{{texte_temps}}{{timeline}}</p>
             </div>
             <div class="volume">
