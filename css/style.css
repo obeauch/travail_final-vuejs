@@ -55,6 +55,7 @@ body {
 .conteneur {
   width: 60%;
   height: 800px;
+  max-height: 90vh;
   margin: 50px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -157,6 +158,9 @@ body {
 
 .conteneur .section-haut .liste-chansons div {
   padding: 10px;
+}
+
+.conteneur .section-haut .liste-chansons div .active-song {
   background-color: transparent;
 }
 
@@ -205,7 +209,7 @@ body {
 
 .conteneur .section-bas .titre-chanson-active .titre-chanson {
   margin: 15px;
-  width: 40%;
+  width: 60%;
   height: 100px;
 }
 

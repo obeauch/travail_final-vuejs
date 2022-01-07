@@ -71,6 +71,7 @@ $bleu-pale: rgb(186, 221, 255);
 
     width: 60%;
     height: 800px;
+    max-height: 90vh;
     margin: 50px auto;
     display: flex;
     flex-direction: column;
@@ -128,28 +129,30 @@ $bleu-pale: rgb(186, 221, 255);
         margin-top: 10px;
         overflow: auto;
 
-
+        
         .liste-chansons {
+            // background-color: $bleu-tres-fonce;
             border-bottom: 1px solid $bleu-pale;
             display: flex;
-            justify-content: space-between;
-            
+            justify-content: space-between;    
             margin: 0px auto;
             width: 90%;
             height: 15%;
-        
-                div {
-                    padding: 10px;
+            
+            div {
+                padding: 10px;
+                // background-color: transparent;                   
+                .active-song {
                     background-color: transparent;
-                    
                 }
-
+            }
         }
+       
         .liste-chansons:hover {
             background-color: $bleu-tres-fonce;
             cursor: pointer;
         }
-       
+
     }
 
     .section-bas {
@@ -186,7 +189,7 @@ $bleu-pale: rgb(186, 221, 255);
     
             .titre-chanson {
                 margin: 15px;
-                width: 40%;
+                width: 60%;
                 height: 100px;
 
             
