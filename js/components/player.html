@@ -2,64 +2,67 @@
     Retour à l'accueil
 </div>
 
-<main class="conteneur contour">
+<main class="conteneur">
 
-    <input class="recherche" type="text" v-model="texte_input" placeholder="Rechercher">
-    <!-- <p>Le texte est :{{ texte_input }}</p> -->
-
-
-    <div class="section-haut">
-
-        <!-- chaque chanson du fetch chansons -->
-        <div class="liste-chansons" v-for="chanson in chansons.filter(rechercheChansons)" @click="afficherChanson(chanson)">
-            <div>{{chanson.titre}}</div>
-            <div>{{chanson.artiste}}</div>
-            <!-- <div>{{chanson.temps}}</div>     
-            <div>{{temps_chanson}}</div> -->
-            <div>{{tempsChanson(chanson.temps)}}</div>
-
- 
-            <!-- <div class="{active-song: actif}" @click="hover" :style="style_chanson">{{chanson.titre}} {{chanson.artiste}} {{chanson.temps}}</div> -->
-       
+    <div class="lecteur contour">
+    
+        <input class="recherche" type="text" v-model="texte_input" placeholder="Rechercher">
+        
+        <div class="section-haut">
+            
+            <!-- chaque chanson du fetch chansons -->
+            <div class="liste-chansons" v-for="chanson in chansons.filter(rechercheChansons)" @click="afficherChanson(chanson)">
+                <div>{{chanson.titre}}</div>
+                <div>{{chanson.artiste}}</div>
+                <div>{{tempsChanson(chanson.temps)}}</div>
+            </div>
         </div>
+    
+        <div class="section-bas">
+    
+            <div class="titre-chanson-active">
+                <div class="image-chanson">
+                    <!-- Affiche l'image de la chanson sélectionnée
+                    Ou, si rien de sélectionné, affiche l'image food-vlog-11204.webp -->
+                    <img class="contour" :src="'images/' + (chanson_selection.image || 'food-vlog-11204.webp')">
+                </div>
+                <div class="titre-chanson">
+                    <!-- Affiche chanson_selection.titre (afficherChanson) 
+                    Ou, si rien de cliqué, affiche Titre: -->
+                    <h3>{{chanson_selection.titre || "Titre:"}}</h3>
 
+                    <!-- Même chose avec artiste -->
+                    <p>{{chanson_selection.artiste || "Artiste:"}}</p> 
+                </div>
+            </div>
+    
+            <div class="barres">
+                <div class="temps">
+                    <!-- D'un min 0 à un max de la longeur de la chanson en cours -->
+                    <input type="range" min="0" :max="chanson_selection.temps" step="0.01" v-model="temps_actuel">
+                    <p>Temps: {{timeline || "0:00"}}</p>
+                </div>
+                <div class="volume">
+                    <input type="range" min="0" max="1" step="0.02" v-model="son" @input="volume">
+                    <p>Volume {{show_volume}}</p>
+                </div>
+            </div>
+    
+            <div class="controles">
+    
+                <!-- le bouton play est visible si musique_joue est à false -->
+                <div class="bouton-play" v-if="!musique_joue" @click="play"></div>
+    
+                <!-- sinon, si musique_joue est à true, le bouton pause est visible -->
+                <div class="bouton-pause" v-else @click="pause"></div>
+    
+            </div>   
+        </div>
     </div>
 
-    <div class="section-bas">
-
-        <div class="titre-chanson-active">
-            <div class="image-chanson">
-                <img class="contour" :src="'images/' + chanson_selection.image" alt="">
-            </div>
-            <div class="titre-chanson">
-                <h3>{{chanson_selection.titre}}</h3>
-                <p>{{chanson_selection.artiste}}</p> 
-            </div>
-        </div>
-
-        <div class="barres">
-            <div class="temps">
-                <input type="range" min="0" :max="chanson_selection.temps" step="0.01" v-model="temps_actuel">
-                <p>{{texte_temps}}{{timeline}}</p>
-            </div>
-            <div class="volume">
-                <input type="range" min="0" max="1" step="0.02" v-model="son" @input="volume">
-                <p>{{texte_volume}}{{this.show_volume}}</p>
-            </div>
-        </div>
-
-        <div class="controles">
-
-            <!-- le bouton play est visible si musique_joue est à false -->
-            <div class="bouton-play" v-if="!musique_joue" @click="play"></div>
-
-            <!-- sinon, si musique_joue est à true, le bouton pause est visible -->
-            <div class="bouton-pause" v-else @click="pause"></div>
-
-        </div>
-
-
+    <div class="section-tags">
+        <!-- Lorsqu'une chanson est sélectionnée, on affiche dans la section tag de droite, tous les tags de la chanson sélectionnée et au click, on applique la fonction rechercheParTag. -->
+        <div class="tag contour" v-for="tag in chanson_selection.tags" @click="rechercheParTag(tag)">{{tag}}</div>
     </div>
-
 
 </main>

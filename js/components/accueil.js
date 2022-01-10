@@ -12,13 +12,9 @@ export default externalTemplate({
 
     mounted() {
 
-
-
     },
 
     methods: {
-
-
 
     }
 

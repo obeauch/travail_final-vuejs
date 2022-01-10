@@ -130,5 +130,34 @@
             "Optimiste",
             "Mélodie"
         ]
+    },
+    {
+        "1d": 9,
+        "titre": "Whis you were here",
+        "artiste": "Pink Floyd (À effacer)",
+        "audio": "wish-you-were-here.mp3",
+        "image": "whis-you-where-here.jpg",
+        "temps":334,
+        "tags": [
+            "Ambiance",
+            "Classique",
+            "Épique",
+            "Émotif"
+        ]
+    },
+    {
+        "1d": 10,
+        "titre": "Piano Man",
+        "artiste": "Billy Joel (À effacer)",
+        "audio": "piano-man-official-music-video.mp3",
+        "image": "Piano_man.jpg",
+        "temps":341,
+        "tags": [
+            "Classique",
+            "Épique",
+            "Émotif",
+            "Mélodie"
+        ]
     }
+
 ]

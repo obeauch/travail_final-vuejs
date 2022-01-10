@@ -12,7 +12,6 @@ const app = {
         return {
             page: "accueil",
             player: null,
-
         }
     },
 
@@ -25,9 +24,7 @@ const app = {
             this.page = nouvelle_page
             this.player = player_page
         }
-
     },
 }
-
 
 Vue.createApp(app).mount("#app")
