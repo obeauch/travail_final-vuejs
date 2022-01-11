@@ -30,9 +30,9 @@
                     <!-- Affiche chanson_selection.titre (afficherChanson) 
                     Ou, si rien de cliqué, affiche Titre: -->
                     <h3>{{chanson_selection.titre || "Titre:"}}</h3>
-
                     <!-- Même chose avec artiste -->
                     <p>{{chanson_selection.artiste || "Artiste:"}}</p> 
+                    <p v-if="actif">{{tempsChanson(chanson_selection.temps)}}</p> 
                 </div>
             </div>
     

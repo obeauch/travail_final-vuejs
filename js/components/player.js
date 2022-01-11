@@ -16,6 +16,7 @@ export default externalTemplate({
             son: 0.5,
             timeline: 0,
             show_volume: "",
+            actif: false,
         }
     },
 
@@ -51,6 +52,7 @@ export default externalTemplate({
         // Affiche la chanson qui a été cliquée
         afficherChanson(chanson) {
             this.chanson_selection = chanson
+            this.actif = true
 
             /**
              * Lorsque une chanson est affichée, musique_joue est à false afin que le bouton play soit visible.

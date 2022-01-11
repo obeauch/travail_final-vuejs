@@ -36,9 +36,9 @@ $bleu-pale: rgb(186, 221, 255);
 .btn-retour {
     
     height: 50px;
-    margin: 30px;
-    margin: 10px;
-    margin-left: 10%;
+    margin: 30px auto;
+
+    margin-left: 30%;
     padding: 10px 0px;
     width: 180px;
     text-align: center;
@@ -68,9 +68,10 @@ $bleu-pale: rgb(186, 221, 255);
 }
 
 .conteneur {
-    width: 60%;
+    max-width: 1200px;
+    width: 70%;
     height: 800px;
-    max-height: 90vh;
+    max-height: 80vh;
     margin: 50px auto;
     display: flex;
     flex-direction: row;
@@ -145,7 +146,6 @@ $bleu-pale: rgb(186, 221, 255);
 
         
         .liste-chansons {
-            // background-color: $bleu-tres-fonce;
             border-bottom: 1px solid $bleu-pale;
             display: flex;
             justify-content: space-between;    
@@ -155,18 +155,12 @@ $bleu-pale: rgb(186, 221, 255);
             
             div {
                 padding: 10px;
-                // background-color: transparent;                   
-                .active-song {
-                    background-color: transparent;
                 }
-            }
-        }
-       
+            }  
         .liste-chansons:hover {
             background-color: $bleu-tres-fonce;
             cursor: pointer;
         }
-
     }
 
     .section-bas {
@@ -187,13 +181,10 @@ $bleu-pale: rgb(186, 221, 255);
             h3,
             p {
                 margin-top: 0px;
+                margin-bottom: 8px;
             }
-
-            
+          
             .image-chanson img { 
-                // border: 1px solid honeydew;
-                
-                // background-image: url("../images/food-vlog-11204.webp");
                 box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
                 height: 100px;
                 margin: 15px 0px;
@@ -201,14 +192,11 @@ $bleu-pale: rgb(186, 221, 255);
                 object-fit: contain;
                 object-position: center center;
             }
-
     
             .titre-chanson {
                 margin: 15px;
                 width: 60%;
                 height: 100px;
-
-            
             }
         }
     

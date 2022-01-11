@@ -22,9 +22,8 @@ body {
 
 .btn-retour {
   height: 50px;
-  margin: 30px;
-  margin: 10px;
-  margin-left: 10%;
+  margin: 30px auto;
+  margin-left: 30%;
   padding: 10px 0px;
   width: 180px;
   text-align: center;
@@ -54,9 +53,10 @@ body {
 }
 
 .conteneur {
-  width: 60%;
+  max-width: 1200px;
+  width: 70%;
   height: 800px;
-  max-height: 90vh;
+  max-height: 80vh;
   margin: 50px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -182,10 +182,6 @@ body {
   padding: 10px;
 }
 
-.lecteur .section-haut .liste-chansons div .active-song {
-  background-color: transparent;
-}
-
 .lecteur .section-haut .liste-chansons:hover {
   background-color: #2a3b4b;
   cursor: pointer;
@@ -215,6 +211,7 @@ body {
 .lecteur .section-bas .titre-chanson-active h3,
 .lecteur .section-bas .titre-chanson-active p {
   margin-top: 0px;
+  margin-bottom: 8px;
 }
 
 .lecteur .section-bas .titre-chanson-active .image-chanson img {
