@@ -3,7 +3,7 @@ body {
   background-color: #131313;
   background-size: 20px 20px;
   color: #e9edcc;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   margin: 0px;
 }
 
@@ -54,9 +54,11 @@ body {
 
 .conteneur {
   max-width: 1200px;
+  min-width: 600px;
   width: 70%;
   height: 800px;
   max-height: 80vh;
+  min-height: 600px;
   margin: 50px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,11 +177,16 @@ body {
           justify-content: space-between;
   margin: 0px auto;
   width: 90%;
-  height: 15%;
+  height: 17%;
+  font-size: 14px;
 }
 
 .lecteur .section-haut .liste-chansons div {
   padding: 10px;
+}
+
+.lecteur .section-haut .active {
+  background-color: #2a3b4b;
 }
 
 .lecteur .section-haut .liste-chansons:hover {

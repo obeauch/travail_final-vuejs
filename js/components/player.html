@@ -11,7 +11,11 @@
         <div class="section-haut">
             
             <!-- chaque chanson du fetch chansons -->
-            <div class="liste-chansons" v-for="chanson in chansons.filter(rechercheChansons)" @click="afficherChanson(chanson)">
+            <div class="liste-chansons" 
+                v-for="chanson in chansons.filter(rechercheChansons)" 
+                @click="afficherChanson(chanson)" 
+                :class="{active: chanson_selection.id == chanson.id}"
+                >
                 <div>{{chanson.titre}}</div>
                 <div>{{chanson.artiste}}</div>
                 <div>{{tempsChanson(chanson.temps)}}</div>

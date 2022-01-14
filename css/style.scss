@@ -10,7 +10,7 @@ body {
         background-color: #131313;
         background-size: 20px 20px;
     color: rgb(233, 237, 204);  
-    font-family: Verdana, Geneva, Tahoma, sans-serif;  
+    font-family: 'Titillium Web', sans-serif;
     margin: 0px;
 }
 
@@ -69,9 +69,11 @@ $bleu-pale: rgb(186, 221, 255);
 
 .conteneur {
     max-width: 1200px;
+    min-width: 600px;
     width: 70%;
     height: 800px;
     max-height: 80vh;
+    min-height: 600px;
     margin: 50px auto;
     display: flex;
     flex-direction: row;
@@ -151,12 +153,24 @@ $bleu-pale: rgb(186, 221, 255);
             justify-content: space-between;    
             margin: 0px auto;
             width: 90%;
-            height: 15%;
+            height: 17%;
+            font-size: 14px;
+
+            // min(20px, max(10px, 10%))
+            $maximum: 16px;
+            $minimum: 10px;
+            // font-size: min($maximum, max($minimum, 1.5vmin));
+            // font-size: clamp(10px, 1.5vmin, 16px);
             
             div {
                 padding: 10px;
                 }
-            }  
+        }
+        
+        .active {
+            background-color: $bleu-tres-fonce;
+        }
+
         .liste-chansons:hover {
             background-color: $bleu-tres-fonce;
             cursor: pointer;
