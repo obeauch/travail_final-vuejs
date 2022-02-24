@@ -54,11 +54,7 @@ body {
 
 .conteneur {
   max-width: 1200px;
-  min-width: 600px;
-  width: 70%;
-  height: 800px;
-  max-height: 80vh;
-  min-height: 600px;
+  height: 80vh;
   margin: 50px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -84,6 +80,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-height: 650px;
 }
 
 .lecteur .recherche {
@@ -165,6 +162,7 @@ body {
   height: 400px;
   margin-top: 10px;
   overflow: auto;
+  min-height: 200px;
 }
 
 .lecteur .section-haut .liste-chansons {
@@ -182,7 +180,8 @@ body {
 }
 
 .lecteur .section-haut .liste-chansons div {
-  padding: 10px;
+  font-size: 18px;
+  margin-top: 7px;
 }
 
 .lecteur .section-haut .active {
@@ -202,6 +201,7 @@ body {
   margin-top: 20px;
   margin-bottom: 50px;
   height: 300px;
+  min-height: 300px;
 }
 
 .lecteur .section-bas .titre-chanson-active {
@@ -237,6 +237,10 @@ body {
   margin: 15px;
   width: 60%;
   height: 100px;
+}
+
+.lecteur .section-bas .titre-chanson-active .titre-chanson p {
+  width: 100px;
 }
 
 .lecteur .section-bas .barres {
@@ -343,5 +347,56 @@ body {
   padding-top: 10px;
   text-align: center;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .section-tags .tag {
+    font-size: 11px;
+  }
+  .lecteur {
+    min-height: 600px;
+  }
+  .lecteur .section-haut {
+    width: 88%;
+  }
+  .lecteur .section-haut .liste-chansons div {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .lecteur .section-bas {
+    width: 88%;
+    min-height: 300px;
+  }
+  .lecteur .section-bas .titre-chanson-active {
+    height: 120px;
+  }
+  .lecteur .section-bas .titre-chanson-active h3,
+  .lecteur .section-bas .titre-chanson-active p {
+    margin-bottom: 5px;
+  }
+  .lecteur .section-bas .titre-chanson-active .image-chanson img {
+    height: 80px;
+    width: 80px;
+  }
+  .lecteur .section-bas .titre-chanson-active .titre-chanson {
+    height: 80px;
+  }
+  .lecteur .section-bas .titre-chanson-active .titre-chanson h3 {
+    font-size: 14px;
+  }
+  .lecteur .section-bas .titre-chanson-active .titre-chanson p {
+    font-size: 11px;
+  }
+  .lecteur .section-bas .barres .volume p, .lecteur .section-bas .barres .temps p {
+    font-size: 12px;
+  }
+  .lecteur .section-bas .controles {
+    height: 60px;
+  }
+  .lecteur .section-bas .controles .bouton-play, .lecteur .section-bas .controles .bouton-pause {
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
